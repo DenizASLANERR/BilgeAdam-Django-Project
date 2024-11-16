@@ -1,0 +1,36 @@
+{% extends 'pages/base.html' %}
+
+{% block title %} Register {% endblock %}
+
+{% block content %}
+
+
+<div class="register-container">
+    <form method="post" class="register-form">
+        <h1>Kaydol</h1>
+    {% csrf_token %}
+        <div>
+            {{ form.username.label_tag }} {{ form.username }}
+        </div>
+        <div>
+            {{ form.first_name.label_tag }} {{ form.first_name }}
+        </div>
+        <div>
+         {{ form.last_name.label_tag }} {{ form.last_name }}
+        </div>
+        <div>
+        {{ form.email.label_tag }} {{ form.email }}
+        </div>
+        <div>
+        {{ form.password.label_tag }} {{ form.password }}
+        </div>
+        <div>
+        {{ form.confirm.label_tag }} {{ form.confirm }}
+        </div>
+        <button type="submit">Kaydol</button>
+    </form>
+
+</div>
+
+{% endblock content %}
+

@@ -1,0 +1,451 @@
+{% extends 'pages/base.html' %}
+
+{% block content %}
+{% load static %}
+ <h1>{{ category_name|title }} Kategorisi</h1>
+
+    {% if category_name == "Kadın" %}
+
+<div class="kadin-bg-img"></div>
+
+<section class="pop-prod">
+        <div class="pop-prod__container">
+          <div class="row">
+
+            {% for product in products %}
+              <a href="{% url 'product:Product' product.id %}">
+            <div class="card-container col-5">
+              <div class="card">
+                <img src="{{ product.image.url }}" class="card-img img-fluid" alt="{{ product.name }}" />
+                <div class="card-body">
+                  <h1>{{ product.name }}</h1>
+                  <p>{{ product.price }}₺</p>
+                </div>
+              </div>
+            </div>
+              </a>
+            {% endfor %}
+
+
+          </div>
+        </div>
+
+
+
+      </section>
+
+
+
+    {% elif category_name == "Kadın-Giyim" %}
+        <p>Bu sayfa kadın giyim kategorisine aittir.</p>
+
+<div class="kadin-giyim-bg-img"></div>
+
+<section class="pop-prod">
+        <div class="pop-prod__container">
+          <div class="row">
+
+            {% for product in products %}
+              <a href="{% url 'product:Product' product.id %}">
+            <div class="card-container col-5">
+              <div class="card">
+                <img src="{{ product.image.url }}" class="card-img img-fluid" alt="{{ product.name }}" />
+                <div class="card-body">
+                  <h1>{{ product.name }}</h1>
+                  <p>{{ product.price }}₺</p>
+                </div>
+              </div>
+            </div>
+              </a>
+            {% endfor %}
+
+
+          </div>
+        </div>
+
+
+
+      </section>
+
+
+    {% elif category_name == "Kadın-İç-Giyim" %}
+        <p>Bu sayfa kadın iç giyim kategorisine aittir.</p>
+
+<div class="promotion-container kadin-ic-giyim-bg-img"></div>
+
+<section class="pop-prod">
+        <div class="pop-prod__container">
+          <div class="row">
+
+            {% for product in products %}
+              <a href="{% url 'product:Product' product.id %}">
+            <div class="card-container col-5">
+              <div class="card">
+                <img src="{{ product.image.url }}" class="card-img img-fluid" alt="{{ product.name }}" />
+                <div class="card-body">
+                  <h1>{{ product.name }}</h1>
+                  <p>{{ product.price }}₺</p>
+                </div>
+              </div>
+            </div>
+              </a>
+            {% endfor %}
+
+
+          </div>
+        </div>
+
+
+
+      </section>
+
+
+    {% elif category_name == "Kadın-Spor-Giyim" %}
+        <p>Bu sayfa kadın spor giyim kategorisine aittir.</p>
+<div class="kadin-spor-bg-img"></div>
+
+<section class="pop-prod">
+        <div class="pop-prod__container">
+          <div class="row">
+
+            {% for product in products %}
+              <a href="{% url 'product:Product' product.id %}">
+            <div class="card-container col-5">
+              <div class="card">
+                <img src="{{ product.image.url }}" class="card-img img-fluid" alt="{{ product.name }}" />
+                <div class="card-body">
+                  <h1>{{ product.name }}</h1>
+                  <p>{{ product.price }}₺</p>
+                </div>
+              </div>
+            </div>
+              </a>
+            {% endfor %}
+
+
+          </div>
+        </div>
+
+
+
+      </section>
+
+
+
+    {% elif category_name == "Erkek" %}
+        <p>Bu sayfa erkek ana kategorisine aittir.</p>
+<div class="erkek-bg-img"></div>
+
+<section class="pop-prod">
+        <div class="pop-prod__container">
+          <div class="row">
+
+            {% for product in products %}
+              <a href="{% url 'product:Product' product.id %}">
+            <div class="card-container col-5">
+                <div class="card">
+                <img src="{{ product.image.url }}" class="card-img img-fluid" alt="{{ product.name }}" />
+                <div class="card-body">
+                  <h1>{{ product.name }}</h1>
+                  <p>{{ product.price }}₺</p>
+                </div>
+              </div>
+            </div>
+              </a>
+            {% endfor %}
+
+
+          </div>
+        </div>
+
+
+
+      </section>
+
+
+    {% elif category_name == "Erkek-Giyim" %}
+        <p>Bu sayfa erkek giyim kategorisine aittir.</p>
+<div class="erkek-giyim-bg-img"></div>
+
+<section class="pop-prod">
+        <div class="pop-prod__container">
+          <div class="row">
+
+            {% for product in products %}
+              <a href="{% url 'product:Product' product.id %}">
+            <div class="card-container col-5">
+              <div class="card">
+                <img src="{{ product.image.url }}" class="card-img img-fluid" alt="{{ product.name }}" />
+                <div class="card-body">
+                  <h1>{{ product.name }}</h1>
+                  <p>{{ product.price }}₺</p>
+                </div>
+              </div>
+            </div>
+              </a>
+            {% endfor %}
+
+
+          </div>
+        </div>
+
+
+
+      </section>
+
+
+    {% elif category_name == "Erkek-İç-Giyim" %}
+        <p>Bu sayfa erkek iç giyim kategorisine aittir.</p>
+<div class="erkek-ic-bg-img"></div>
+
+<section class="pop-prod">
+        <div class="pop-prod__container">
+          <div class="row">
+
+            {% for product in products %}
+              <a href="{% url 'product:Product' product.id %}">
+            <div class="card-container col-5">
+              <div class="card">
+                <img src="{{ product.image.url }}" class="card-img img-fluid" alt="{{ product.name }}" />
+                <div class="card-body">
+                  <h1>{{ product.name }}</h1>
+                  <p>{{ product.price }}₺</p>
+                </div>
+              </div>
+            </div>
+              </a>
+            {% endfor %}
+
+
+          </div>
+        </div>
+
+
+
+      </section>
+
+
+    {% elif category_name == "Erkek-Spor-Giyim" %}
+        <p>Bu sayfa erkek spor giyim kategorisine aittir.</p>
+<div class="erkek-spor-bg-img"></div>
+
+<section class="pop-prod">
+        <div class="pop-prod__container">
+          <div class="row">
+
+            {% for product in products %}
+              <a href="{% url 'product:Product' product.id %}">
+            <div class="card-container col-5">
+                <div class="card">
+                <img src="{{ product.image.url }}" class="card-img img-fluid" alt="{{ product.name }}" />
+                <div class="card-body">
+                  <h1>{{ product.name }}</h1>
+                  <p>{{ product.price }}₺</p>
+                </div>
+              </div>
+            </div>
+              </a>
+            {% endfor %}
+
+
+          </div>
+        </div>
+
+
+
+      </section>
+
+
+
+    {% elif category_name == "Anne-Çocuk" %}
+        <p>Bu sayfa anne ve çocuk ana kategorisine aittir.</p>
+<div class="anne-cocuk-bg-img"></div>
+
+<section class="pop-prod">
+        <div class="pop-prod__container">
+          <div class="row">
+
+            {% for product in products %}
+              <a href="{% url 'product:Product' product.id %}">
+            <div class="card-container col-5">
+              <div class="card">
+                <img src="{{ product.image.url }}" class="card-img img-fluid" alt="{{ product.name }}" />
+                <div class="card-body">
+                  <h1>{{ product.name }}</h1>
+                  <p>{{ product.price }}₺</p>
+                </div>
+              </div>
+            </div>
+              </a>
+            {% endfor %}
+
+
+          </div>
+        </div>
+
+
+
+      </section>
+
+
+    {% elif category_name == "Bebek-Giyim" %}
+        <p>Bu sayfa bebek giyim kategorisine aittir.</p>
+<div class="bebek-bg-img"></div>
+
+<section class="pop-prod">
+        <div class="pop-prod__container">
+          <div class="row">
+
+            {% for product in products %}
+              <a href="{% url 'product:Product' product.id %}">
+            <div class="card-container col-5">
+              <div class="card">
+                <img src="{{ product.image.url }}" class="card-img img-fluid" alt="{{ product.name }}" />
+                <div class="card-body">
+                  <h1>{{ product.name }}</h1>
+                  <p>{{ product.price }}₺</p>
+                </div>
+              </div>
+            </div>
+              </a>
+            {% endfor %}
+
+
+          </div>
+        </div>
+
+
+
+      </section>
+
+
+    {% elif category_name == "Hamile-Giyim" %}
+        <p>Bu sayfa hamile giyim kategorisine aittir.</p>
+<div class="hamile-bg-img"></div>
+
+<section class="pop-prod">
+        <div class="pop-prod__container">
+          <div class="row">
+
+            {% for product in products %}
+              <a href="{% url 'product:Product' product.id %}">
+            <div class="card-container col-5">
+              <div class="card">
+                <img src="{{ product.image.url }}" class="card-img img-fluid" alt="{{ product.name }}" />
+                <div class="card-body">
+                  <h1>{{ product.name }}</h1>
+                  <p>{{ product.price }}₺</p>
+                </div>
+              </div>
+            </div>
+              </a>
+            {% endfor %}
+
+
+          </div>
+        </div>
+
+
+
+      </section>
+
+
+    {% elif category_name == "Çocuk-Giyim" %}
+        <p>Bu sayfa çocuk giyim kategorisine aittir.</p>
+<div class="cocuk-bg-img"></div>
+
+<section class="pop-prod">
+        <div class="pop-prod__container">
+          <div class="row">
+
+            {% for product in products %}
+              <a href="{% url 'product:Product' product.id %}">
+            <div class="card-container col-5">
+              <div class="card">
+                <img src="{{ product.image.url }}" class="card-img img-fluid" alt="{{ product.name }}" />
+                <div class="card-body">
+                  <h1>{{ product.name }}</h1>
+                  <p>{{ product.price }}₺</p>
+                </div>
+              </div>
+            </div>
+              </a>
+            {% endfor %}
+
+
+          </div>
+        </div>
+
+
+
+      </section>
+
+
+
+    {% elif category_name == "Ayakkabı" %}
+        <p>Bu sayfa ayakkabı kategorisine aittir.</p>
+<div class="ayakkabı-bg-img"></div>
+
+<section class="pop-prod">
+        <div class="pop-prod__container">
+          <div class="row">
+
+            {% for product in products %}
+              <a href="{% url 'product:Product' product.id %}">
+            <div class="card-container col-5">
+              <div class="card">
+                <img src="{{ product.image.url }}" class="card-img img-fluid" alt="{{ product.name }}" />
+                <div class="card-body">
+                  <h1>{{ product.name }}</h1>
+                  <p>{{ product.price }}₺</p>
+                </div>
+              </div>
+            </div>
+              </a>
+            {% endfor %}
+
+
+          </div>
+        </div>
+
+
+
+      </section>
+
+
+    {% elif category_name == "Çanta" %}
+        <p>Bu sayfa çanta kategorisine aittir.</p>
+<div class="canta-bg-img"></div>
+
+<section class="pop-prod">
+        <div class="pop-prod__container">
+          <div class="row">
+
+            {% for product in products %}
+              <a href="{% url 'product:Product' product.id %}">
+            <div class="card-container col-5">
+              <div class="card">
+                <img src="{{ product.image.url }}" class="card-img img-fluid" alt="{{ product.name }}" />
+                <div class="card-body">
+                  <h1>{{ product.name }}</h1>
+                  <p>{{ product.price }}₺</p>
+                </div>
+              </div>
+            </div>
+              </a>
+            {% endfor %}
+
+
+          </div>
+        </div>
+
+
+
+      </section>
+
+
+
+    {% else %}
+        <p>Bu sayfa bulunamadı.</p>
+    {% endif %}
+{% endblock content %}

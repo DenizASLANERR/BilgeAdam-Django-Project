@@ -1,0 +1,14 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+{% block content %}
+<div class="register-container">
+    <form method="POST"  class="register-form">
+        {% csrf_token %}
+        {{ form.username.label_tag }} {{form.username}}
+        {{ form.password.label_tag }} {{form.password}}
+        </br>
+        <button type="submit" >Giriş Yap</button>
+    </form>
+</div>
+
+{% endblock content %}

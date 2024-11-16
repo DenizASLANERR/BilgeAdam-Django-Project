@@ -1,0 +1,198 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta name="csrf-token" content="{{ csrf_token }}">
+
+
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <!-- Google Font Styling-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+    <title>{% block title %} Denla.com {% endblock title %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+</head>
+
+<body>
+
+<header>
+    {% block header %}
+    <h1 class="header-top">Bu sayfa BilgeAdam Akademi Django projesi için Deniz Aslaner Tarafından hazırlanmıştır. <b>Ticari bir amaç gütmemektedir!</b></h1>
+
+    <div class="menu-icon">&#xe5d2;</div>
+
+    <!-- Yan Menü -->
+    <div class="side-menu">
+        <ul class="menu">
+            <li>
+                <div class="nav-bar-logo-menu">
+                    <a href="{% url 'pages:index' %}">
+                        <img class="nav-logo" src="{% static 'images/logo.png' %}" alt="">
+                    </a>
+                </div>
+            </li>
+            <li>
+                <span class="menu-item"><a href="{% url 'category:Kadın' %}" >Kadın</a></span>
+                <ul class="submenu">
+                    <li><a href="{% url 'category:Kadın-Giyim' %}">Giyim</a></li>
+                    <li><a href="{% url 'category:Kadın-İç-Giyim' %}">İç Giyim & Pijama </a></li>
+                    <li><a href="{% url 'category:Kadın-Spor-Giyim' %}">Spor Giyim</a></li>
+                </ul>
+            </li>
+            <li>
+                <span class="menu-item"><a href="{% url 'category:Erkek' %}" >Erkek</a></span>
+                <ul class="submenu">
+                    <li><a href="{% url 'category:Erkek-Giyim' %}">Giyim</a></li>
+                    <li><a href="{% url 'category:Erkek-İç-Giyim' %}">İç Giyim & Pijama</a></li>
+                    <li><a href="{% url 'category:Erkek-Spor-Giyim' %}">Spor Giyim</a></li>
+                </ul>
+            </li>
+            <li>
+                <span class="menu-item"><a href="{% url 'category:Anne-Çocuk' %}" >Anne & Çocuk</a></span>
+                <ul class="submenu">
+                    <li><a href="{% url 'category:Bebek-Giyim' %}">Bebek Giyim</a></li>
+                    <li><a href="{% url 'category:Hamile-Giyim' %}">Hamile Giyim</a></li>
+                    <li><a href="{% url 'category:Çocuk-Giyim' %}">Çocuk Giyim</a></li>
+                </ul>
+            </li>
+            <li>
+                <span class="menu-item"><a href="{% url 'category:Çanta' %}" >Çanta</a></span>
+            </li>
+            <li>
+                <span class="menu-item"><a href="{% url 'category:Ayakkabı' %}" >Ayakkabı</a></span>
+            </li>
+            <li>
+                <div class="search-box-menu">
+            <form action="{% url 'product:product_search' %}" method="get">
+                {% csrf_token %}
+                <img class="nav-search-icon" src="{% static 'images/search.png' %}" alt="">
+                <input class="nav-label" type="text" name="keyword" placeholder="Ara..." value="{{ keyword|default:'' }}">
+                <button type="submit" class="nav-search-btn">Ara</button>
+            </form>
+        </div>
+            </li>
+        </ul>
+    </div>
+
+
+
+
+
+    <section class="nav-bar">
+        <div class="left-header-nav">
+        <ul class="left-header-nav__items">
+            <li class="left-header-nav__item">
+                <a href="{% url 'category:Kadın' %}" >Kadın</a>
+                <ul class="dropdown-content">
+                    <li><a href="{% url 'category:Kadın-Giyim' %}">Giyim</a></li>
+                    <li><a href="{% url 'category:Kadın-İç-Giyim' %}">İç Giyim & Pijama </a></li>
+                    <li><a href="{% url 'category:Kadın-Spor-Giyim' %}">Spor Giyim</a></li>
+                </ul>
+            </li>
+            <li class="left-header-nav__item">
+                <a href="{% url 'category:Erkek' %}" >Erkek</a>
+                <ul class="dropdown-content">
+                    <li><a href="{% url 'category:Erkek-Giyim' %}">Giyim</a></li>
+                    <li><a href="{% url 'category:Erkek-İç-Giyim' %}">İç Giyim & Pijama</a></li>
+                    <li><a href="{% url 'category:Erkek-Spor-Giyim' %}">Spor Giyim</a></li>
+                </ul>
+            </li>
+            <li class="left-header-nav__item">
+                <a href="{% url 'category:Anne-Çocuk' %}" >Anne & Çocuk</a>
+                <ul class="dropdown-content">
+                    <li><a href="{% url 'category:Çocuk-Giyim' %}">Çocuk Giyim</a></li>
+                    <li><a href="{% url 'category:Hamile-Giyim' %}">Hamile Giyim</a></li>
+                    <li><a href="{% url 'category:Bebek-Giyim' %}">Bebek Giyim</a></li>
+                </ul>
+            </li>
+            <li class="left-header-nav__item"><a href="{% url 'category:Çanta' %}" >Çanta</a></li>
+            <li class="left-header-nav__item"><a href="{% url 'category:Ayakkabı' %}" >Ayakkabı</a></li>
+        </ul>
+    </div>
+        <div class="nav-bar-logo">
+            <a href="{% url 'pages:index' %}">
+            <img class="nav-logo" src="{% static 'images/logo.png' %}" alt="">
+        </a>
+        </div>
+        <div class="search-box">
+            <form action="{% url 'product:product_search' %}" method="get">
+                {% csrf_token %}
+                <img class="nav-search-icon" src="{% static 'images/search.png' %}" alt="">
+                <input class="nav-label" type="text" name="keyword" placeholder="Ara..." value="{{ keyword|default:'' }}">
+                <button type="submit" class="nav-search-btn">Ara</button>
+            </form>
+        </div>
+        <div class="right-header-nav">
+            <ul class="right-header-nav__items">
+
+                {% if user.is_authenticated %}
+               <h3> {{ request.user.username }}</h3>
+                <li class="right-header-nav__item register-link"><a href="/user/logout">Çıkış Yap</a></li>
+
+                {% else %}
+                <li class="right-header-nav__item">
+                    <a href="/user/login">Giriş</a>
+                </li>
+                <li class="right-header-nav__item register-link"><a href="/user/register">Kaydol</a></li>
+
+
+                {% endif %}
+                  <li>
+                <a href="{% url 'cart:view_cart' %}" class="right-header-nav__icon-link">
+                    <img class="nav-card-icon" src="{% static 'images/card.png' %}" alt="">
+                </a>
+            </li>
+        </ul>
+    </div>
+    </section>
+    {% endblock header%}
+</header>
+
+<main>
+    {% block content %} {% endblock content %}
+</main>
+<footer>
+    {% block footer %}
+        <div class="footer-container">
+            <div>
+                <ul>
+                    <li>E-Mail: denizaslaner06@gmail.com</li>
+                    <li><a href="https://github.com/DenizASLANERR">Proje GitHub linki</a></li>
+                </ul>
+            </div>
+
+        </div>
+    {% endblock footer %}
+</footer>
+
+<script src="{% static 'js/script.js' %}"></script>
+
+<script src="{% static 'js/cart.js' %}">
+{% block script %}
+
+        var csrftoken = document.querySelector('[name=csrf-token]').getAttribute('content');
+        const csrftoken = '{{ csrf_token }}';
+        const updateQuantityUrl = "{% url 'cart:update_quantity' %}";
+        const removeItemUrl = "{% url 'cart:remove_item' %}";
+        const completeOrderUrl = "{% url 'cart:complete_order' %}";
+
+{% endblock script %}
+        </script>
+</body>
+</html>
+
+

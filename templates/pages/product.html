@@ -1,0 +1,24 @@
+{% extends 'pages/base.html' %}
+
+
+{% block content %}
+
+<div class="product-detail">
+    <div class="image-container">
+        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+    </div>
+    <div class="product-info">
+        <h1>{{ product.name }}</h1>
+        <p>{{ product.description }}</p>
+        <p id="detail-p">{{ product.price }} ₺</p>
+        <p>Stok: {{ product.stock }}</p>
+        <form action="{% url 'cart:add_to_cart' product.id %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Sepete Ekle</button>
+</form>
+    </div>
+</div>
+
+
+
+{% endblock content %}

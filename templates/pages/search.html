@@ -1,0 +1,40 @@
+{% extends 'pages/base.html' %}
+
+{% block content %}
+<div class="search-page-container">
+<h1>Arama Sonuçları</h1>
+    <hr>
+{% if keyword %}
+    <p class="search-discription">"{{ keyword }}" için sonuçlar:</p>
+    {% if products %}
+
+            {% for product in products %}
+            <a href="{% url 'product:Product' product.id %}">
+            <div class="cart-item">
+                <div class="cart-info">
+
+                        <div class="cart-item-image">
+                       <img src="{{ product.image.url }}" alt="{{ product.name }}"></img>
+                            </div>
+                </div>
+
+                <div class="cart-item-price">
+                            <h3>{{ product.name }}</h3>
+                            <p>{{ product.description }}</p>
+                            <p>{{ product.price }}₺</p>
+                </div>
+
+            </div>
+                </a>
+            {% endfor %}
+
+    {% else %}
+    <div class="not-found-items">
+        <p>Sonuç bulunamadı.</p>
+    </div>
+    {% endif %}
+{% else %}
+    <p>Aramak istediğiniz kelimeyi yazın.</p>
+{% endif %}
+</div>
+{% endblock content %}

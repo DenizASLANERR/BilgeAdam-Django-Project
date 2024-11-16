@@ -1,0 +1,52 @@
+{% extends "pages/base.html" %}
+{% load static %}
+{% block title %} Anasayfa | Denla.com {% endblock title %}
+
+{% block content %}
+
+
+<div class="promotion-container main-bg-img">
+    <div class="promotion-container__content-right clearfix">
+        <h1 class="promotion-container__h1-right">Bu Kasım <br> En trend Sen Ol!</h1>
+    </div>
+    <div class="promotion-container__content-left clearfix" >
+        <h1 class="promotion-container__h1-left">Seçili Ürünlerde </br> %35'e varan </br> İndirim Sizlerle</h1>
+    </div>
+</div>
+
+<div class="promotion-footer">
+    <div class="promotion-footer__item promotion-footer__explanation">
+        <a href="{% url 'category:Kadın' %}">
+        <h2 class="promotion-footer__explanationh2_1">Süpriz İndirimli Ürünler</br> Seni Bekliyor!</h2>
+        <h2 class="promotion-footer__explanationh2_2" >Bu Kasım</br>En  Trend</br>Sen Ol!</h2>
+        <p>Hemen keşfetmeye başla fırsatları kaçırma!</p>
+        </a>
+    </div>
+    <div class="promotion-footer__item ">
+        <h2 class="promotion-footer__photo1_1">En Trend </br>Sen Ol!</h2>
+        <h2 class="promotion-footer__photo1_2">Spor Giyim</h2>
+        <h2 class="promotion-footer__photo1_3">399.99₺</h2>
+        <p class="promotion-footer__photo1_4">'den başlayan fiyatlarla</p>
+        <a href="{% url 'category:Kadın-Spor-Giyim' %}"><img src="{% static 'images/kadin-spor-giyim.jpg' %}" alt=""></a>
+    </div>
+    <div class="promotion-footer__item">
+        <h2 class="promotion-footer__photo1_1">En Trend </br>Sen Ol!</h2>
+        <h2 class="promotion-footer__photo1_2">İç Giyim</h2>
+        <h2 class="promotion-footer__photo1_3">399.99₺</h2>
+        <p class="promotion-footer__photo1_4">'den başlayan fiyatlarla</p>
+        <a href="{% url 'category:Kadın-İç-Giyim' %}"><img src="{% static 'images/kadın-ic-giyim.jpg' %}" alt=""></a>
+    </div>
+    <div class="promotion-footer__item">
+        <h2 class="promotion-footer__photo1_1">En Trend </br>Sen Ol!</h2>
+        <h2 class="promotion-footer__photo1_2">Kadın Triko</h2>
+        <h2 class="promotion-footer__photo1_3">399.99₺</h2>
+        <p class="promotion-footer__photo1_4">'den başlayan fiyatlarla</p>
+        <a href="{% url 'category:Kadın-Giyim' %}"><img src="{% static 'images/kadın-gunluk-giyim.jpg' %}" alt=""></a>
+    </div>
+</div>
+
+
+
+{% endblock content %}
+
+

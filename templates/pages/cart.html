@@ -1,0 +1,37 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="cart-container">
+    <div id="cart-items">
+        {% for item in cart_items %}
+        <div class="cart-item" id="cart-item-{{ item.product.id }}">
+            <div class="cart-item-image">
+                <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+            </div>
+            <div class="cart-item-details">
+                <div class="cart-info">
+                    <h3>{{ item.product.name }}</h3>
+                    <p>{{ item.product.description }}</p>
+                    <input type="number" class="cart-item-quantity" value="{{ item.quantity }}" data-product-id="{{ item.product.id }}" data-url="{% url 'cart:update_quantity' %}">
+                    <button class="remove-item-btn" data-product-id="{{ item.product.id }}" data-url="{% url 'cart:remove_item' %}">Sil</button>
+                </div>
+                <div class="cart-item-price">
+                    <p>Ürün Toplam: <span class="product-total" data-product-id="{{ item.product.id }}">{{ item.total_price }}</span>₺</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="cart-summary">
+        <h2 id="cart-total">Toplam: {{ cart_total }}₺</h2>
+        <button class="complete-order-btn" data-url="{% url 'cart:complete_order' %}">Siparişi Tamamla</button>
+    </div>
+</div>
+
+{% endblock content %}
+
+{% block script %}
+    const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+{% endblock script %}
